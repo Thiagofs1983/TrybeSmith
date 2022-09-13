@@ -17,3 +17,8 @@ export interface ICreateUser {
   level: number;
   password: string;
 }
+
+export interface IJwtOptions {
+  algorithm: string;
+  expiresIn: string;
+}
