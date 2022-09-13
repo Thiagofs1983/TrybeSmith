@@ -18,7 +18,6 @@ export interface ICreateUser {
   password: string;
 }
 
-export interface IJwtOptions {
-  algorithm: string;
-  expiresIn: string;
+export interface INewUser extends ICreateUser {
+  id: number;
 }
