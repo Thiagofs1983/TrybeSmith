@@ -18,6 +18,6 @@ export interface ICreateUser {
   password: string;
 }
 
-export interface INewUser extends ICreateUser {
-  id: number;
+export interface IToken {
+  token: string;
 }
