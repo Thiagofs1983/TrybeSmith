@@ -6,3 +6,7 @@ export interface ICreateProducts {
 export interface INewProduct extends ICreateProducts {
   id: number;
 }
+
+export interface Product extends INewProduct {
+  orderId: number | null;
+}
