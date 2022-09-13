@@ -10,3 +10,10 @@ export interface INewProduct extends ICreateProducts {
 export interface IProduct extends INewProduct {
   orderId: number | null;
 }
+
+export interface ICreateUser {
+  username: string;
+  classe: string;
+  level: number;
+  password: string;
+}
