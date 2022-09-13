@@ -1,7 +1,7 @@
 import productsModel from '../models/products.model';
-import { ICreateProducts, INewProduct } from '../interfaces';
+import { ICreateProducts, INewProduct, IProduct } from '../interfaces';
 
-const createProduct = async (newProduct: ICreateProducts) => {
+const createProduct = async (newProduct: ICreateProducts): Promise<INewProduct> => {
   const { insertId } = await productsModel.createProduct(newProduct);
   const result: INewProduct = {
     ...newProduct,
@@ -10,7 +10,7 @@ const createProduct = async (newProduct: ICreateProducts) => {
   return result;
 };
 
-const getAll = async () => {
+const getAll = async (): Promise<IProduct[]> => {
   const result = await productsModel.getAll();
   return result;
 };
