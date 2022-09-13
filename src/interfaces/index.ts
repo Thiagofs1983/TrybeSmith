@@ -21,3 +21,9 @@ export interface ICreateUser {
 export interface IToken {
   token: string;
 }
+
+export interface IOrder {
+  id: number;
+  userId: number;
+  productsId: number[];
+}
