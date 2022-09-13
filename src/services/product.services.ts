@@ -10,4 +10,9 @@ const createProduct = async (newProduct: ICreateProducts) => {
   return result;
 };
 
-export default { createProduct };
+const getAll = async () => {
+  const result = await productsModel.getAll();
+  return result;
+};
+
+export default { createProduct, getAll };
