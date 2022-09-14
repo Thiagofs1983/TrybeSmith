@@ -9,7 +9,8 @@ O.id, O.userId, JSON_ARRAYAGG(P.id) AS productsIds
   FROM 
 Trybesmith.Orders AS O
   INNER JOIN Trybesmith.Products AS P ON O.id = P.orderId
-  GROUP BY O.id;`;
+  GROUP BY O.id
+  ORDER BY O.userId;`;
   const [result] = await connection.execute(query);
   return result as IOrder[];
 };
