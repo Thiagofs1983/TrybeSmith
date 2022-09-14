@@ -11,11 +11,14 @@ export interface IProduct extends INewProduct {
   orderId: number | null;
 }
 
-export interface ICreateUser {
+export interface ILogin {
   username: string;
+  password: string;
+}
+
+export interface ICreateUser extends ILogin {
   classe: string;
   level: number;
-  password: string;
 }
 
 export interface IToken {
