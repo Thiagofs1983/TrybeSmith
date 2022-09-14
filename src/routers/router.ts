@@ -10,7 +10,7 @@ routers.post('/products', validate.validateCreateProduct, productsController.cre
 
 routers.get('/products', productsController.getAll);
 
-routers.post('/users', usersController.createUser);
+routers.post('/users', validate.validateCreateUser, usersController.createUser);
 
 routers.post('/login', validate.validateLogin, usersController.login);
 
