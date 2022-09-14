@@ -21,6 +21,9 @@ export interface ICreateUser extends ILogin {
   level: number;
 }
 
+export interface ILoginSucess extends ICreateUser {
+  id: number;
+}
 export interface IToken {
   token: string;
 }

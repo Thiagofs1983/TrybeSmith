@@ -12,8 +12,10 @@ const createUser = async (user: ICreateUser): Promise<IToken> => {
 
 const login = async (user: ILogin): Promise<IToken> => {
   const result = await usersModel.login(user);
-  if (!result) throw new HttpExeption(StatusCodes.UNAUTHORIZED, 'Username or password invalid');
-  const payload = `${result.id} | ${user.username}`;
+  if (result.length === 0) {
+    throw new HttpExeption(StatusCodes.UNAUTHORIZED, 'Username or password invalid');
+  }
+  const payload = `${result[0].id} | ${user.username}`;
   const token = generateToken(payload);
   return { token };
 };
