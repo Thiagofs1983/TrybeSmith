@@ -12,9 +12,6 @@ const createUser = async (req: Request, res: Response): Promise<void> => {
 const login = async (req: Request, res: Response) => {
   const user: ILogin = req.body;
   const token = await usersServices.login(user);
-  if (!token) {
-    return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Username or password invalid' });
-  }
   res.status(StatusCodes.OK).json(token);
 };
 
