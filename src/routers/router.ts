@@ -11,6 +11,8 @@ routers.get('/products', productsController.getAll);
 
 routers.post('/users', usersController.createUser);
 
+routers.post('/login', usersController.login);
+
 routers.get('/orders', ordersController.getAll);
 
 export default routers;
